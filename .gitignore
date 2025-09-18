@@ -1,0 +1,54 @@
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+
+# Build directories
+build/
+bin/
+obj/
+Debug/
+Release/
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+
+# IDE files
+.vscode/
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.suo
+*.user
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# Container files (if large)
+*.sif
+*.simg
+
+# Test outputs
+test-installation
+test-*
