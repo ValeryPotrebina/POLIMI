@@ -1,0 +1,42 @@
+# Cursor Rules for NUMERICAL LINEAR ALGEBRA Labs
+
+## Documentation Reading
+- **ALWAYS** read `Lab0_SetUp.md` before providing setup or compilation instructions
+- **ALWAYS** read the corresponding `Lab*_*.md` file (e.g., `Lab4_IterSolver.md`) before explaining lab exercises
+- These files contain essential context about:
+  - Environment setup (apptainer container, module loading)
+  - Exercise instructions and expected implementations
+  - Compilation commands specific to the lab
+
+## Code Explanations
+- The user is **learning C++**, so provide detailed explanations
+- When explaining code:
+  - Break down syntax step-by-step
+  - Explain C++ concepts like templates, references, pointers, etc.
+  - Use simple language and analogies
+  - Include examples when helpful
+  - Don't assume prior knowledge of C++ features
+
+## Example Topics to Explain in Detail
+- `using` keyword and type aliases
+- Templates (`template <class T>`)
+- References (`&`) vs pointers (`*`) vs values
+- `const` keyword usage
+- Namespaces and scope resolution (`::`)
+- Eigen library specifics (sparse matrices, vectors, solvers)
+- Pass-by-reference vs pass-by-value
+- Function templates and how they work
+
+## Lab Environment
+- User works in **WSL2** on Windows
+- Uses **apptainer container** with `amsc_mk_2025.sif`
+- Container path: `/mnt/d/POLIMI/amsc_mk_2025.sif`
+- Must load modules inside container: `source /u/sw/etc/bash.bashrc`
+- Compilation requires: `g++ -I ${mkEigenInc} <file>.cpp -o <output>`
+
+## Response Style
+- Be patient and thorough
+- Provide step-by-step instructions
+- Explain "why" not just "how"
+- Use Russian language when user communicates in Russian
+
