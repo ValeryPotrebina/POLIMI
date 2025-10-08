@@ -1,0 +1,77 @@
+@prefix : <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl/>
+@prefix dbr: <http://dbpedia.org/resource/>
+
+:Mona_Lisa rdf:type :Artwork .
+:Mona_Lisa rdf:type :Painting .
+:Last_Supper rdf:type :Artwork .
+:Last_Supper rdf:type :Painting .
+:David rdf:type :Artwork .
+:David rdf:type :Sculpture .
+:Sistine_Chapel rdf:type :Artwork .
+:Sistine_Chapel rdf:type :Painting .
+:Helicopter rdf:type :Invention .
+
+:Painting rdfs:subClassOf :Artwork .
+:Sculpture rdfs:subClassOf :Artwork .
+
+:Mona_Lisa rdfs:label "Mona Lisa"@en .
+:Mona_Lisa rdfs:label "Gioconda"@it .
+:Last_Supper rdfs:label "The last supper"@en .
+:Last_Supper rdfs:label "L'ultima cena"@it .
+:David rdfs:label "David"@en .
+:David rdfs:label "David"@it .
+:Sistine_Chapel rdfs:label "Sistine Chapel ceiling"@en .
+:Sistine_Chapel rdfs:label "Volta della Cappella Sistina"@it .
+:Helicopter rdfs:label "Vite Aerea"@it .
+
+:Mona_Lisa :heightMetric "0.77"^^xsd:decimal .
+:Mona_Lisa :witdthMetric "0.53"^^xsd:decimal .
+:Last_Supper :heightMetric "4.60"^^xsd:decimal .
+:Last_Supper :witdthMetric "8.80"^^xsd:decimal .
+:David :heightMetric "4.86"^^xsd:decimal .
+
+:Mona_Lisa :year 1503 .
+:Last_Supper :year 1495 .
+:David :year 1501 .
+:Sistine_Chapel :year 1473.
+:Helicopter :year 1483 .
+
+:Mona_Lisa :author :Leonardo .
+:Last_Supper :author :Leonardo .
+:David :author :Michelangelo .
+:Sistine_Chapel :author :Michelangelo .
+:Helicopter :author :Leonardo .
+
+:Leonardo rdf:type :Engineer .
+:Leonardo rdf:type :Artist .
+:Michelangelo rdf:type :Artist .
+
+:Leonardo rdfs:label "Leonardo da Vinci" .
+:Michelangelo rdfs:label "Michelangelo Buonarroti" .
+
+:Leonardo :birthPlace :Anchiano .
+:Michelangelo :birthPlace :Caprese_Michelangelo .
+:Leonardo :birthPlace :Italy .
+:Michelangelo :birthPlace :Italy .
+:Leonardo :deathPlace :France .
+:Michelangelo :deathPlace :Italy .
+:Leonardo :deathPlace :Amboise .
+:Michelangelo :deathPlace :Rome .
+
+:Leonardo :birthYear "1452"^^xsd:int .
+:Michelangelo :birthYear "1475"^^xsd:int .
+:Leonardo :birthDate "1452-04-15"^^xsd:date .
+:Michelangelo :birthDate "1475-03-06"^^xsd:date .
+:Michelangelo :deathYear "1564"^^xsd:int .
+:Michelangelo :deathDate "1564-02-18"^^xsd:date .
+
+:Mona_Lisa owl:sameAs dbr:Mona_Lisa .
+:Last_Supper owl:sameAs dbr:The_Last_Supper_\(Leonardo\) .
+:David owl:sameAs dbr:David_\(Michelangelo\) .
+:Sistine_Chapel owl:sameAs dbr:Sistine_Chapel.
+:Leonardo owl:sameAs dbr:Leonardo_da_Vinci .
+:Michelangelo owl:sameAs dbr:Michelangelo .
