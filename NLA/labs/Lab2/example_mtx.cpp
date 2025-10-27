@@ -15,7 +15,7 @@ int main(int argc, char** argv)
     // define exact solution
     VectorXd b = mat*xe;                 // compute right-hand side
     cout << b.size() << endl;
-    
+     
     // Export vector in .mtx format
     Eigen::saveMarketVector(b, "./b.mtx");
     int n = b.size();
