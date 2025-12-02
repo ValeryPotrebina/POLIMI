@@ -1,8 +1,7 @@
 //*****************************************************************
-// Iterative template routine -- CG
+// Iterative template routine -- GRAD
 //
-// CG solves the symmetric positive definite linear
-// system Ax=b using the Conjugate Gradient method.
+// GRAD solves the non-singular linear system Ax=b using the Gradient method.
 //
 // The return value indicates convergence within max_iter (input)
 // iterations (0), or no convergence within max_iter iterations (1).
@@ -19,23 +18,18 @@
 namespace LinearAlgebra
 {
 template <class Matrix, class Vector, class Preconditioner>
-
-int CG(const Matrix &A, Vector &x, const Vector &b, const Preconditioner &M,
+int GRAD(const Matrix &A, Vector &x, const Vector &b, const Preconditioner &M,
    int &max_iter, typename Vector::Scalar &tol)
 {
   using Real = typename Matrix::Scalar;
   Real   resid;
-  Vector p(b.size());
-  Vector z(b.size());
   Vector q(b.size());
-  Real   alpha, beta, rho;
-  Real   rho_1(0.0);
+  Vector z(b.size());
+  Real   alpha, rho;
 
   Real   normb = b.norm();
   Vector r = b - A * x;
-
-  if(normb == 0.0)
-    normb = 1;
+  if(normb == 0.0) normb = 1;
 
   if((resid = r.norm() / normb) <= tol)
     {
@@ -48,19 +42,10 @@ int CG(const Matrix &A, Vector &x, const Vector &b, const Preconditioner &M,
     {
       z = M.solve(r);
       rho = r.dot(z);
+      q = A * z;
+      alpha = rho / z.dot(q);
 
-      if(i == 1)
-        p = z;
-      else
-        {
-          beta = rho / rho_1;
-          p = z + beta * p;
-        }
-
-      q = A * p;
-      alpha = rho / p.dot(q);
-
-      x += alpha * p;
+      x += alpha * z;
       r -= alpha * q;
 
       if((resid = r.norm() / normb) <= tol)
@@ -69,11 +54,9 @@ int CG(const Matrix &A, Vector &x, const Vector &b, const Preconditioner &M,
           max_iter = i;
           return 0;
         }
-
-      rho_1 = rho;
     }
 
   tol = resid;
   return 1;
 }
-} // namespace LinearAlgebra
+} // namespace LinearAlgebra      

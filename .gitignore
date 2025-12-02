@@ -1,4 +1,4 @@
-# Compiled binaries
+# Compiled binaries and executables
 *.exe
 *.out
 *.o
@@ -8,6 +8,8 @@
 *.dylib
 *.a
 *.lib
+*.gch
+*.pch
 
 # Build directories
 build/
@@ -15,18 +17,28 @@ bin/
 obj/
 Debug/
 Release/
+cmake-build-*/
+out/
+
+# CMake
 CMakeFiles/
 cmake_install.cmake
 CMakeCache.txt
+Makefile
+*.cmake
+!CMakeLists.txt
 
 # IDE files
 .vscode/
 .vs/
+.idea/
 *.vcxproj
 *.vcxproj.filters
 *.sln
 *.suo
 *.user
+*.sublime-project
+*.sublime-workspace
 
 # OS generated files
 .DS_Store
@@ -36,6 +48,7 @@ CMakeCache.txt
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Temporary files
 *.tmp
@@ -44,11 +57,102 @@ Thumbs.db
 *.swp
 *.swo
 *~
+*.bak
+*.backup
+*.cache
 
-# Container files (if large)
+# Container files
 *.sif
 *.simg
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+.ipynb_checkpoints/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX auxiliary files
+*.aux
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# Archives (large data files)
+*.gz
+*.zip
+*.tar
+*.rar
+*.7z
+
+# Test executables (without extension - compiled binaries)
+test
+exercise
+exercise[0-9]*
+solution
+rgb
+test_cg
+test_grad
+test_gr
+
 # Test outputs
 test-installation
-test-*
+
+# CMake generated
+*.d
+install_manifest.txt
+compile_commands.json
+
+# VTK output files
+*.vtk
+*.vtu
+*.pvtu
+
+
+# deal.II outputs
+*.visit
+*.pvd
+
+# Embedded git repositories (cloned repos inside the project)
+AMSC/dd-01-dd/
+NLA/labs/polimi-nla-challenge-02/
+PARALLEL COMPUTING/challenge_2/polimi-parallel-computing-challenge-2/
+PDE/examples/dealii/
+PDE/labs/nmpde-labs-aa-25-26/
+SDA/Courseware/
+
+# Matrix/data files (often large)
+*.mtx
+
+# Large external course materials
+NLA/exam/EXAM_MATERIAL/
+
+# Executables without extension (Linux/Mac compiled binaries)
+exer[0-9]*
+test
+exercise
+solution
+rgb
+test_*
+!*.cpp
+!*.hpp
+!*.h
+!*.c
+!*.md
+!*.txt
+!*.py
